@@ -1,0 +1,32 @@
+//
+//  PrefixHeader.pch
+//  XDEShop
+//
+//  Created by Celia on 2018/4/3.
+//  Copyright © 2018年 Hopex. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "GlobalConfig.h"
+#import "Macro.h"
+#import "HPConsts.h"
+
+#import "UIFont+HPFont.h"
+#import "UIImage+HPCategory.h"
+#import "UIColor+HPCategory.h"
+#import "UIButton+HPExtension.h"
+#import "UIButton+HPImageTitleSpacing.h"
+#import "UIView+HPFrame.h"
+#import "UIImageView+HPExtension.h"
+#import "UILabel+HPExtension.h"
+#import "UIView+HPCategory.h"
+#import "UITextField+HPExtension.h"
+#import "UIViewController+HPExtension.h"
+
+#import <Masonry.h>
+#import <MJRefresh/MJRefresh.h>
+#import <SDWebImage/SDImageCache.h>
+
+#endif /* PrefixHeader_pch */
