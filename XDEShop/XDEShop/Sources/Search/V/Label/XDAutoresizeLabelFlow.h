@@ -1,21 +1,22 @@
 //
-//  MSSAutoresizeLabelFlow.h
-//  MSSAutoresizeLabelFlow
+//  XDAutoresizeLabelFlow.h
+//  XDAutoresizeLabelFlow
 //
-//  Created by Mrss on 15/12/26.
-//  Copyright © 2015年 expai. All rights reserved.
+//  Created by Celia on 2018/4/11.
+//  Copyright © 2018年 HP. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class MSSAutoresizeLabelFlow;
-typedef void(^selectedHandler)(NSUInteger index,NSString *title);
-typedef void(^contentSizeChanged)(MSSAutoresizeLabelFlow *labelFlow,CGFloat newH);
+@class XDAutoresizeLabelFlow;
+typedef void(^selectedHandler)(NSIndexPath *indexPath,NSString *title);
+typedef void (^deleteActionHandler)(NSIndexPath *indexPath);
 
-@interface MSSAutoresizeLabelFlow : UIView
+@interface XDAutoresizeLabelFlow : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame
                        titles:(NSArray *)titles
+                sectionTitles:(NSArray *)secTitles
               selectedHandler:(selectedHandler)handler;
 
 - (void)insertLabelWithTitle:(NSString *)title
@@ -34,10 +35,8 @@ typedef void(^contentSizeChanged)(MSSAutoresizeLabelFlow *labelFlow,CGFloat newH
 
 - (void)reloadAllWithTitles:(NSArray *)titles;
 
-
-@property (nonatomic, copy) contentSizeChanged contentSizeChangedHandler;
-
 @property (nonatomic, assign) BOOL selectMark;  // 选中标记
+@property (nonatomic, copy) deleteActionHandler deleteHandler;//删除block
 
 @end
 

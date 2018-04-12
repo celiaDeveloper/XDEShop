@@ -129,13 +129,13 @@
 		3F76AA89207469FE00D68A25 /* XDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA88207469FE00D68A25 /* XDHomeViewController.m */; };
 		3F76AA8C20746A2800D68A25 /* XDSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA8B20746A2800D68A25 /* XDSearchViewController.m */; };
 		3F76AA8F207485EA00D68A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F76AA8D207485EA00D68A25 /* Main.storyboard */; };
-		3F76AAA12074AE1F00D68A25 /* MSSAutoresizeLabelFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA922074AE1F00D68A25 /* MSSAutoresizeLabelFlow.m */; };
-		3F76AAA22074AE1F00D68A25 /* MSSAutoresizeLabelFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA932074AE1F00D68A25 /* MSSAutoresizeLabelFlowLayout.m */; };
-		3F76AAA32074AE1F00D68A25 /* MSSAutoresizeLabelFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA982074AE1F00D68A25 /* MSSAutoresizeLabelFlowCell.m */; };
-		3F76AAA42074AE1F00D68A25 /* MSSAutoresizeLabelFlowConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA992074AE1F00D68A25 /* MSSAutoresizeLabelFlowConfig.m */; };
+		3F76AAA12074AE1F00D68A25 /* XDAutoresizeLabelFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA922074AE1F00D68A25 /* XDAutoresizeLabelFlow.m */; };
+		3F76AAA22074AE1F00D68A25 /* XDAutoresizeLabelFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA932074AE1F00D68A25 /* XDAutoresizeLabelFlowLayout.m */; };
+		3F76AAA32074AE1F00D68A25 /* XDAutoresizeLabelFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA982074AE1F00D68A25 /* XDAutoresizeLabelFlowCell.m */; };
+		3F76AAA42074AE1F00D68A25 /* XDAutoresizeLabelFlowConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA992074AE1F00D68A25 /* XDAutoresizeLabelFlowConfig.m */; };
 		3F76AAA52074AE1F00D68A25 /* XDSearchStoreTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA9A2074AE1F00D68A25 /* XDSearchStoreTableView.m */; };
 		3F76AAA62074AE1F00D68A25 /* XDSearchStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA9B2074AE1F00D68A25 /* XDSearchStoreCell.m */; };
-		3F76AAA72074AE1F00D68A25 /* XDSearchRecordHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA9C2074AE1F00D68A25 /* XDSearchRecordHeaderView.m */; };
+		3F76AAA72074AE1F00D68A25 /* XDAutoresizeLabelFlowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AA9C2074AE1F00D68A25 /* XDAutoresizeLabelFlowHeader.m */; };
 		3F76AAA82074AE1F00D68A25 /* XDSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AAA02074AE1F00D68A25 /* XDSearchBarView.m */; };
 		3F76AAAB2074AE3800D68A25 /* XDSearchStoreListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76AAA92074AE3800D68A25 /* XDSearchStoreListViewController.m */; };
 		6DD55B50F0FAFB860626F936 /* libPods-XDEShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF95ED3AAA68E326AD94647C /* libPods-XDEShop.a */; };
@@ -374,18 +374,18 @@
 		3F76AA8A20746A2800D68A25 /* XDSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSearchViewController.h; sourceTree = "<group>"; };
 		3F76AA8B20746A2800D68A25 /* XDSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDSearchViewController.m; sourceTree = "<group>"; };
 		3F76AA8E207485EA00D68A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3F76AA902074AE1F00D68A25 /* XDSearchRecordHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSearchRecordHeaderView.h; sourceTree = "<group>"; };
-		3F76AA922074AE1F00D68A25 /* MSSAutoresizeLabelFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSAutoresizeLabelFlow.m; sourceTree = "<group>"; };
-		3F76AA932074AE1F00D68A25 /* MSSAutoresizeLabelFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSAutoresizeLabelFlowLayout.m; sourceTree = "<group>"; };
-		3F76AA942074AE1F00D68A25 /* MSSAutoresizeLabelFlowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSAutoresizeLabelFlowCell.h; sourceTree = "<group>"; };
-		3F76AA952074AE1F00D68A25 /* MSSAutoresizeLabelFlowConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSAutoresizeLabelFlowConfig.h; sourceTree = "<group>"; };
-		3F76AA962074AE1F00D68A25 /* MSSAutoresizeLabelFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSAutoresizeLabelFlow.h; sourceTree = "<group>"; };
-		3F76AA972074AE1F00D68A25 /* MSSAutoresizeLabelFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSAutoresizeLabelFlowLayout.h; sourceTree = "<group>"; };
-		3F76AA982074AE1F00D68A25 /* MSSAutoresizeLabelFlowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSAutoresizeLabelFlowCell.m; sourceTree = "<group>"; };
-		3F76AA992074AE1F00D68A25 /* MSSAutoresizeLabelFlowConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSAutoresizeLabelFlowConfig.m; sourceTree = "<group>"; };
+		3F76AA902074AE1F00D68A25 /* XDAutoresizeLabelFlowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAutoresizeLabelFlowHeader.h; sourceTree = "<group>"; };
+		3F76AA922074AE1F00D68A25 /* XDAutoresizeLabelFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAutoresizeLabelFlow.m; sourceTree = "<group>"; };
+		3F76AA932074AE1F00D68A25 /* XDAutoresizeLabelFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAutoresizeLabelFlowLayout.m; sourceTree = "<group>"; };
+		3F76AA942074AE1F00D68A25 /* XDAutoresizeLabelFlowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAutoresizeLabelFlowCell.h; sourceTree = "<group>"; };
+		3F76AA952074AE1F00D68A25 /* XDAutoresizeLabelFlowConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAutoresizeLabelFlowConfig.h; sourceTree = "<group>"; };
+		3F76AA962074AE1F00D68A25 /* XDAutoresizeLabelFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAutoresizeLabelFlow.h; sourceTree = "<group>"; };
+		3F76AA972074AE1F00D68A25 /* XDAutoresizeLabelFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAutoresizeLabelFlowLayout.h; sourceTree = "<group>"; };
+		3F76AA982074AE1F00D68A25 /* XDAutoresizeLabelFlowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAutoresizeLabelFlowCell.m; sourceTree = "<group>"; };
+		3F76AA992074AE1F00D68A25 /* XDAutoresizeLabelFlowConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAutoresizeLabelFlowConfig.m; sourceTree = "<group>"; };
 		3F76AA9A2074AE1F00D68A25 /* XDSearchStoreTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSearchStoreTableView.m; sourceTree = "<group>"; };
 		3F76AA9B2074AE1F00D68A25 /* XDSearchStoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSearchStoreCell.m; sourceTree = "<group>"; };
-		3F76AA9C2074AE1F00D68A25 /* XDSearchRecordHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDSearchRecordHeaderView.m; sourceTree = "<group>"; };
+		3F76AA9C2074AE1F00D68A25 /* XDAutoresizeLabelFlowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAutoresizeLabelFlowHeader.m; sourceTree = "<group>"; };
 		3F76AA9D2074AE1F00D68A25 /* XDSearchStoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSearchStoreCell.h; sourceTree = "<group>"; };
 		3F76AA9E2074AE1F00D68A25 /* XDSearchStoreTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSearchStoreTableView.h; sourceTree = "<group>"; };
 		3F76AA9F2074AE1F00D68A25 /* XDSearchBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDSearchBarView.h; sourceTree = "<group>"; };
@@ -1025,9 +1025,9 @@
 		3F76A9EB2073811200D68A25 /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
-				3F76A9EC2073811200D68A25 /* NSMutableArray+HPSafe.h */,
 				3F76A9ED2073811200D68A25 /* NSArray+HPSafe.h */,
 				3F76A9EE2073811200D68A25 /* NSArray+HPSafe.m */,
+				3F76A9EC2073811200D68A25 /* NSMutableArray+HPSafe.h */,
 				3F76A9EF2073811200D68A25 /* NSMutableArray+HPSafe.m */,
 			);
 			path = NSArray;
@@ -1208,8 +1208,6 @@
 				3F76AA912074AE1F00D68A25 /* Label */,
 				3F76AA9F2074AE1F00D68A25 /* XDSearchBarView.h */,
 				3F76AAA02074AE1F00D68A25 /* XDSearchBarView.m */,
-				3F76AA902074AE1F00D68A25 /* XDSearchRecordHeaderView.h */,
-				3F76AA9C2074AE1F00D68A25 /* XDSearchRecordHeaderView.m */,
 				3F76AA9D2074AE1F00D68A25 /* XDSearchStoreCell.h */,
 				3F76AA9B2074AE1F00D68A25 /* XDSearchStoreCell.m */,
 				3F76AA9E2074AE1F00D68A25 /* XDSearchStoreTableView.h */,
@@ -1221,14 +1219,16 @@
 		3F76AA912074AE1F00D68A25 /* Label */ = {
 			isa = PBXGroup;
 			children = (
-				3F76AA962074AE1F00D68A25 /* MSSAutoresizeLabelFlow.h */,
-				3F76AA922074AE1F00D68A25 /* MSSAutoresizeLabelFlow.m */,
-				3F76AA972074AE1F00D68A25 /* MSSAutoresizeLabelFlowLayout.h */,
-				3F76AA932074AE1F00D68A25 /* MSSAutoresizeLabelFlowLayout.m */,
-				3F76AA942074AE1F00D68A25 /* MSSAutoresizeLabelFlowCell.h */,
-				3F76AA982074AE1F00D68A25 /* MSSAutoresizeLabelFlowCell.m */,
-				3F76AA952074AE1F00D68A25 /* MSSAutoresizeLabelFlowConfig.h */,
-				3F76AA992074AE1F00D68A25 /* MSSAutoresizeLabelFlowConfig.m */,
+				3F76AA962074AE1F00D68A25 /* XDAutoresizeLabelFlow.h */,
+				3F76AA922074AE1F00D68A25 /* XDAutoresizeLabelFlow.m */,
+				3F76AA972074AE1F00D68A25 /* XDAutoresizeLabelFlowLayout.h */,
+				3F76AA932074AE1F00D68A25 /* XDAutoresizeLabelFlowLayout.m */,
+				3F76AA942074AE1F00D68A25 /* XDAutoresizeLabelFlowCell.h */,
+				3F76AA982074AE1F00D68A25 /* XDAutoresizeLabelFlowCell.m */,
+				3F76AA902074AE1F00D68A25 /* XDAutoresizeLabelFlowHeader.h */,
+				3F76AA9C2074AE1F00D68A25 /* XDAutoresizeLabelFlowHeader.m */,
+				3F76AA952074AE1F00D68A25 /* XDAutoresizeLabelFlowConfig.h */,
+				3F76AA992074AE1F00D68A25 /* XDAutoresizeLabelFlowConfig.m */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -1417,7 +1417,7 @@
 				3F76AA052073811200D68A25 /* SFHFKeychainUtils.m in Sources */,
 				3F76AA0D2073811200D68A25 /* STQRCodeController.m in Sources */,
 				3F76AA262073811200D68A25 /* HPCountdownButton.m in Sources */,
-				3F76AAA22074AE1F00D68A25 /* MSSAutoresizeLabelFlowLayout.m in Sources */,
+				3F76AAA22074AE1F00D68A25 /* XDAutoresizeLabelFlowLayout.m in Sources */,
 				3F76AA622073811200D68A25 /* UITableView+HPTableView.m in Sources */,
 				3F76AA1A2073811200D68A25 /* HPBaseWKWebViewController.m in Sources */,
 				3F76AA252073811200D68A25 /* HPAddandCutView.m in Sources */,
@@ -1446,7 +1446,7 @@
 				3F76AA442073811200D68A25 /* HPRequestCenter.m in Sources */,
 				3F76AA652073811200D68A25 /* UICollectionViewFlowLayout+HPExtension.m in Sources */,
 				3F76AA4C2073811200D68A25 /* UIButton+HPExtension.m in Sources */,
-				3F76AAA72074AE1F00D68A25 /* XDSearchRecordHeaderView.m in Sources */,
+				3F76AAA72074AE1F00D68A25 /* XDAutoresizeLabelFlowHeader.m in Sources */,
 				3F76AA072073811200D68A25 /* SDWaitingView.m in Sources */,
 				3F76AA172073811200D68A25 /* LEEAlert.m in Sources */,
 				3F76AA082073811200D68A25 /* SDBrowserImageView.m in Sources */,
@@ -1462,7 +1462,7 @@
 				3F76AA4A2073811200D68A25 /* UILabel+HPExtension.m in Sources */,
 				3F76AA4B2073811200D68A25 /* UIButton+HPImageTitleSpacing.m in Sources */,
 				3F76AAA82074AE1F00D68A25 /* XDSearchBarView.m in Sources */,
-				3F76AAA32074AE1F00D68A25 /* MSSAutoresizeLabelFlowCell.m in Sources */,
+				3F76AAA32074AE1F00D68A25 /* XDAutoresizeLabelFlowCell.m in Sources */,
 				3F76AA572073811200D68A25 /* UICollectionViewController+HPCurrentPage.m in Sources */,
 				3F76AA77207464AB00D68A25 /* XDNavigationController.m in Sources */,
 				3F76AA3D2073811200D68A25 /* HPUserDefault.m in Sources */,
@@ -1472,7 +1472,7 @@
 				3F76AA3A2073811200D68A25 /* HPPickerView.m in Sources */,
 				3F76AAA62074AE1F00D68A25 /* XDSearchStoreCell.m in Sources */,
 				3F76AA582073811200D68A25 /* UICollectionView+HPExtension.m in Sources */,
-				3F76AAA12074AE1F00D68A25 /* MSSAutoresizeLabelFlow.m in Sources */,
+				3F76AAA12074AE1F00D68A25 /* XDAutoresizeLabelFlow.m in Sources */,
 				3F76AAA52074AE1F00D68A25 /* XDSearchStoreTableView.m in Sources */,
 				3F76AA342073811200D68A25 /* HPButtonLayoutTextView.m in Sources */,
 				3F76AA152073811200D68A25 /* SRVideoProgressTip.m in Sources */,
@@ -1496,7 +1496,7 @@
 				3F76AA242073811200D68A25 /* HPAlertTools.m in Sources */,
 				3F76AA86207469EF00D68A25 /* XDPersonalViewController.m in Sources */,
 				3F76AA102073811200D68A25 /* SRVideoPlayer.m in Sources */,
-				3F76AAA42074AE1F00D68A25 /* MSSAutoresizeLabelFlowConfig.m in Sources */,
+				3F76AAA42074AE1F00D68A25 /* XDAutoresizeLabelFlowConfig.m in Sources */,
 				3F76AA74207386CF00D68A25 /* XDTabBarController.m in Sources */,
 				3F76AA4E2073811200D68A25 /* UIView+HPImageToBase64.m in Sources */,
 				3F76AA422073811200D68A25 /* HPNetManagerCache.m in Sources */,

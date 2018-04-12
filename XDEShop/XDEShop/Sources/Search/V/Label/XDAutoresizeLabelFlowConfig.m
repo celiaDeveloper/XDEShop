@@ -1,17 +1,17 @@
 //
-//  MSSAutoresizeLabelFlowConfig.m
-//  MSSAutoresizeLabelFlow
+//  XDAutoresizeLabelFlowConfig.m
+//  XDAutoresizeLabelFlow
 //
-//  Created by Mrss on 15/12/26.
-//  Copyright © 2015年 expai. All rights reserved.
+//  Created by Celia on 2018/4/11.
+//  Copyright © 2018年 HP. All rights reserved.
 //
 
-#import "MSSAutoresizeLabelFlowConfig.h"
+#import "XDAutoresizeLabelFlowConfig.h"
 
-@implementation MSSAutoresizeLabelFlowConfig
+@implementation XDAutoresizeLabelFlowConfig
 
-+ (MSSAutoresizeLabelFlowConfig *)shareConfig {
-    static MSSAutoresizeLabelFlowConfig *config;
++ (XDAutoresizeLabelFlowConfig *)shareConfig {
+    static XDAutoresizeLabelFlowConfig *config;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         config = [[self alloc]init];
@@ -36,6 +36,7 @@
         self.textSelectedColor = [UIColor whiteColor];
         self.textFont = [UIFont systemFontOfSize:15];
         self.backgroundColor = [UIColor whiteColor];
+        self.sectionHeight = 40;
     }
     return self;
 }

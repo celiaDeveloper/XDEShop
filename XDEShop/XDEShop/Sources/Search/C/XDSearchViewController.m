@@ -8,17 +8,16 @@
 
 #import "XDSearchViewController.h"
 #import "XDSearchBarView.h"
-#import "MSSAutoresizeLabelFlow.h"
-#import "XDSearchRecordHeaderView.h"
+#import "XDAutoresizeLabelFlow.h"
+#import "XDAutoresizeLabelFlowHeader.h"
 #import "XDDataBase.h"
 
 #import "XDSearchStoreListViewController.h"
 
-@interface XDSearchViewController () <XDSearchBarViewDelegate, XDSearchRecordHeaderViewDelegate>
+@interface XDSearchViewController () <XDSearchBarViewDelegate>
 @property (nonatomic, strong) XDSearchBarView *searchBar;
-@property (nonatomic, strong) MSSAutoresizeLabelFlow *recordView;
-@property (nonatomic, strong) XDSearchRecordHeaderView *hotHeader;
-@property (nonatomic, strong) MSSAutoresizeLabelFlow *hotView;
+@property (nonatomic, strong) XDAutoresizeLabelFlow *recordView;
+@property (nonatomic, strong) NSMutableArray *dataArray;
 @end
 
 @implementation XDSearchViewController
@@ -26,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"搜索";
+    self.dataArray = @[@[],@[]].mutableCopy;
     [[XDDataBase sharedXDDataBase] openSearchRecordDataBase];
     [self createInterface];
 }
@@ -50,7 +50,8 @@
     HPWeakSelf(self)
     [[XDDataBase sharedXDDataBase] querySearchRecord:^(NSArray *resultArray) {
         DEBUGLog(@"%@",resultArray);
-        [weakself.recordView reloadAllWithTitles:resultArray];
+        [weakself.dataArray replaceObjectAtIndex:0 withObject:resultArray];
+        [weakself.recordView reloadAllWithTitles:weakself.dataArray];
     }];
 }
 
@@ -80,59 +81,29 @@
     [self performSearchAction:keyword];
 }
 
-- (void)XDSearchRecordHeaderViewDeleteAction {
-    DEBUGLog(@"删除搜索记录");
-    [[XDDataBase sharedXDDataBase] deleteAllSearchRecord];
-}
-
 #pragma mark - 数据请求 / 数据处理
 #pragma mark - 视图布局
 - (void)createInterface {
     // 搜索框
     [self.view addSubview:self.searchBar];
     
-    // 搜索记录头
-    XDSearchRecordHeaderView *recordHeader = [[XDSearchRecordHeaderView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchBar.frame) + 30, HPScreenWidth, 40)];
-    recordHeader.titleString = @"搜索记录";
-    recordHeader.haveDeleteBtn = YES;
-    recordHeader.delegate = self;
-    [self.view addSubview:recordHeader];
+    // 热门搜索数据
+    NSArray *hotArray = @[@"兰芝",@"雅漾",@"雪肌精",@"雅诗兰黛",@"DHC",@"韩版女装",@"T恤",@"时尚男装"];
+    [self.dataArray replaceObjectAtIndex:1 withObject:hotArray];
     
-    // 搜索记录选项
+    // collectionview
     HPWeakSelf(self)
-    [[XDDataBase sharedXDDataBase] querySearchRecord:^(NSArray *resultArray) {
-        DEBUGLog(@"%@",resultArray);
-        weakself.recordView = [[MSSAutoresizeLabelFlow alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(recordHeader.frame), HPScreenWidth, 30) titles:resultArray selectedHandler:^(NSUInteger index, NSString *title) {
-            [weakself performSearchAction:title];
-        }];
+    self.recordView = [[XDAutoresizeLabelFlow alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchBar.frame) + 15, HPScreenWidth, HPScreenHeight - CGRectGetMaxY(self.searchBar.frame) - 15 - HPTabBarH) titles:self.dataArray sectionTitles:@[@"搜索记录",@"热门搜索"] selectedHandler:^(NSIndexPath *indexPath, NSString *title) {
+        [weakself performSearchAction:title];
     }];
+    
+    self.recordView.deleteHandler = ^(NSIndexPath *indexPath) {
+        DEBUGLog(@"删除搜索记录");
+        [[XDDataBase sharedXDDataBase] deleteAllSearchRecord];
+    };
+
     [self.view addSubview:self.recordView];
     
-    // 搜索记录位置改变 调整热门搜索位置
-    self.recordView.contentSizeChangedHandler = ^(MSSAutoresizeLabelFlow *labelFlow, CGFloat newH) {
-        
-        CGRect hhFrame = weakself.hotHeader.frame;
-        hhFrame.origin.y = CGRectGetMaxY(weakself.recordView.frame) + 10;
-        weakself.hotHeader.frame = hhFrame;
-        
-        CGRect hvFrame = weakself.hotView.frame;
-        hvFrame.origin.y = CGRectGetMaxY(hhFrame);
-        hvFrame.size.height = HPScreenHeight - (weakself.recordView.top + newH + 10 + hhFrame.size.height) - 10;
-        weakself.hotView.frame = hvFrame;
-    };
-    
-    
-    // 热门搜索头
-    _hotHeader = [[XDSearchRecordHeaderView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.recordView.frame) + 10, HPScreenWidth, 40)];
-    _hotHeader.titleString = @"热门搜索";
-    [self.view addSubview:_hotHeader];
-    
-    // 热门搜索选项
-    NSArray *hotArray = @[@"兰芝",@"雅漾",@"雪肌精",@"雅诗兰黛",@"DHC",@"韩版女装",@"T恤",@"时尚男装"];
-    self.hotView = [[MSSAutoresizeLabelFlow alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_hotHeader.frame), HPScreenWidth, HPScreenHeight - CGRectGetMaxY(_hotHeader.frame) - 10) titles:hotArray selectedHandler:^(NSUInteger index, NSString *title) {
-        [self performSearchAction:title];
-    }];
-    [self.view addSubview:self.hotView];
 }
 
 #pragma mark - 懒加载

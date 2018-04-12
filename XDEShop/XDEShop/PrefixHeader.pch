@@ -24,6 +24,7 @@
 #import "UIView+HPCategory.h"
 #import "UITextField+HPExtension.h"
 #import "UIViewController+HPExtension.h"
+#import "NSArray+HPSafe.h"
 
 #import <Masonry.h>
 #import <MJRefresh/MJRefresh.h>

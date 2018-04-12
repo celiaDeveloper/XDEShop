@@ -1,19 +1,20 @@
 //
-//  XDSearchRecordHeaderView.m
-//  B2B2C
+//  XDAutoresizeLabelFlowHeader.m
+//  XDAutoresizeLabelFlow
 //
-//  Created by Celia on 2018/1/11.
+//  Created by Celia on 2018/4/11.
 //  Copyright © 2018年 HP. All rights reserved.
 //
 
-#import "XDSearchRecordHeaderView.h"
+#import "XDAutoresizeLabelFlowHeader.h"
 
-@interface XDSearchRecordHeaderView ()
+@interface XDAutoresizeLabelFlowHeader ()
 @property (nonatomic, strong) UIImageView *leftIV;
 @property (nonatomic, strong) UILabel *title;
+@property (nonatomic, strong) UIButton *deleteBtn;
 @end
 
-@implementation XDSearchRecordHeaderView
+@implementation XDAutoresizeLabelFlowHeader
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -31,8 +32,11 @@
 
 #pragma mark - 内部逻辑实现
 - (void)deleteButtonClicked:(UIButton *)btn {
-    if ([self.delegate respondsToSelector:@selector(XDSearchRecordHeaderViewDeleteAction)]) {
-        [self.delegate XDSearchRecordHeaderViewDeleteAction];
+//    if ([self.delegate respondsToSelector:@selector(XDAutoresizeLabelFlowHeaderDeleteAction)]) {
+//        [self.delegate XDAutoresizeLabelFlowHeaderDeleteAction];
+//    }
+    if (self.deleteActionBlock) {
+        self.deleteActionBlock(self.indexPath);
     }
 }
 
@@ -42,12 +46,9 @@
 - (void)setHaveDeleteBtn:(BOOL)haveDeleteBtn {
     _haveDeleteBtn = haveDeleteBtn;
     if (haveDeleteBtn) {
-        UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [deleteBtn setImage:GetImage(@"delete_icon") forState:UIControlStateNormal];
-        deleteBtn.frame = CGRectMake(self.width - 60, 5, 50, self.height - 10);
-        [deleteBtn addTarget:self action:@selector(deleteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self addSubview:deleteBtn];
+        self.deleteBtn.hidden = false;
+    }else {
+        self.deleteBtn.hidden = true;
     }
 }
 
@@ -66,6 +67,13 @@
     self.title = [UILabel initLabelTextFont:20 textColor:[UIColor blackColor] title:@""];
     [self addSubview:self.title];
     
+    // 右上角 删除按钮
+    self.deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.deleteBtn setImage:GetImage(@"delete_icon") forState:UIControlStateNormal];
+    self.deleteBtn.frame = CGRectMake(self.width - 60, 5, 50, self.height - 10);
+    [self.deleteBtn addTarget:self action:@selector(deleteButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self addSubview:self.deleteBtn];
 }
 
 - (void)setConstraints {

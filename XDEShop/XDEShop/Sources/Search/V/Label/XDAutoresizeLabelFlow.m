@@ -1,37 +1,48 @@
 //
-//  MSSAutoresizeLabelFlow.m
-//  MSSAutoresizeLabelFlow
+//  XDAutoresizeLabelFlow.m
+//  XDAutoresizeLabelFlow
 //
-//  Created by Mrss on 15/12/26.
-//  Copyright © 2015年 expai. All rights reserved.
+//  Created by Celia on 2018/4/11.
+//  Copyright © 2018年 HP. All rights reserved.
 //
 
-#import "MSSAutoresizeLabelFlow.h"
-#import "MSSAutoresizeLabelFlowLayout.h"
-#import "MSSAutoresizeLabelFlowCell.h"
-#import "MSSAutoresizeLabelFlowConfig.h"
+#import "XDAutoresizeLabelFlow.h"
+#import "XDAutoresizeLabelFlowLayout.h"
+#import "XDAutoresizeLabelFlowCell.h"
+#import "XDAutoresizeLabelFlowConfig.h"
+#import "XDAutoresizeLabelFlowHeader.h"
 
 static NSString *const cellId = @"cellId";
+static NSString *const headerId = @"flowHeaderID";
 
-@interface MSSAutoresizeLabelFlow () <UICollectionViewDataSource,UICollectionViewDelegate,MSSAutoresizeLabelFlowLayoutDataSource,MSSAutoresizeLabelFlowLayoutDelegate>
-@property (nonatomic,strong) UICollectionView *collection;
-@property (nonatomic,strong) NSMutableArray   *data;
-@property (nonatomic,  copy) selectedHandler  handler;
-@property (nonatomic, assign) NSInteger numberCount;
+@interface XDAutoresizeLabelFlow () <UICollectionViewDataSource, UICollectionViewDelegate, XDAutoresizeLabelFlowLayoutDataSource>
 
-@property (nonatomic, assign) NSInteger selectItem;     // 选中的item
+@property (nonatomic,strong) UICollectionView   *collection;
+@property (nonatomic,strong) NSMutableArray     *data;
+@property (nonatomic,strong) NSArray            *sectionData;
+@property (nonatomic,assign) NSInteger numberCount;
+@property (nonatomic,copy)   selectedHandler  handler;
+
+@property (nonatomic,strong) NSIndexPath *selectIndex;     // 选中的item
+
 @end
 
-@implementation MSSAutoresizeLabelFlow
+@implementation XDAutoresizeLabelFlow
 
-- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles selectedHandler:(selectedHandler)handler {
+- (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles sectionTitles:(NSArray *)secTitles selectedHandler:(selectedHandler)handler {
     self = [super initWithFrame:frame];
-//    if (!titles.count) {
-//        return self;
-//    }
+
     if (self) {
         self.backgroundColor = [UIColor clearColor];
-        self.data = [titles mutableCopy];
+        if (!titles) {
+           self.data = @[@[]].mutableCopy;
+        }else if (!titles.count || ![titles[0] isKindOfClass:[NSArray class]]) {
+            self.data = @[titles].mutableCopy;
+        }else {
+           self.data = [titles mutableCopy];
+        }
+        
+        self.sectionData = secTitles;
         self.handler = handler;
         [self setup];
     }
@@ -39,46 +50,71 @@ static NSString *const cellId = @"cellId";
 }
 
 - (void)setup {
-    MSSAutoresizeLabelFlowLayout *layout = [[MSSAutoresizeLabelFlowLayout alloc] init];
-    layout.delegate = self;
+    XDAutoresizeLabelFlowLayout *layout = [[XDAutoresizeLabelFlowLayout alloc] init];
     layout.dataSource = self;
     self.collection = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
-    self.collection.backgroundColor = [MSSAutoresizeLabelFlowConfig shareConfig].backgroundColor;
+    self.collection.backgroundColor = [XDAutoresizeLabelFlowConfig shareConfig].backgroundColor;
     self.collection.allowsMultipleSelection = YES;
+    self.collection.scrollEnabled = YES;
     self.collection.delegate = self;
     self.collection.dataSource = self;
-    [self.collection registerClass:[MSSAutoresizeLabelFlowCell class] forCellWithReuseIdentifier:cellId];
+    [self.collection registerClass:[XDAutoresizeLabelFlowHeader class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId];
+    [self.collection registerClass:[XDAutoresizeLabelFlowCell class] forCellWithReuseIdentifier:cellId];
     [self addSubview:self.collection];
     
 }
 
-- (void)setSelectMark:(BOOL)selectMark {
-    _selectMark = selectMark;
-    if (selectMark) {
-        self.selectItem = 0;
+- (void)reloadAllWithTitles:(NSArray *)titles {
+    if (!titles.count || ![titles[0] isKindOfClass:[NSArray class]]) {
+        self.data = @[titles].mutableCopy;
+    }else {
+        self.data = [titles mutableCopy];
     }
-}
-
-- (void)setSelectItem:(NSInteger)selectItem {
-    _selectItem = selectItem;
     [self.collection reloadData];
 }
 
 
-#pragma mark - collectionview 代理方法
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+- (void)setSelectMark:(BOOL)selectMark {
+    _selectMark = selectMark;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (void)setSelectIndex:(NSIndexPath *)selectIndex {
+    _selectIndex = selectIndex;
+    [self.collection reloadData];
+}
+
+#pragma mark - collectionview 代理方法
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.data.count;
 }
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSArray *array = self.data[section];
+    return array.count;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if (kind == UICollectionElementKindSectionHeader) {
+        XDAutoresizeLabelFlowHeader *headerV = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId forIndexPath:indexPath];
+        headerV.indexPath = indexPath;
+        headerV.haveDeleteBtn = indexPath.section == 0 ? YES : NO;
+
+        headerV.titleString = [self.sectionData safeObjectAtIndex:indexPath.section] ? : @"";
+        headerV.deleteActionBlock = ^(NSIndexPath *indexPath) {
+            if (self.deleteHandler) {
+                self.deleteHandler(indexPath);
+            }
+        };
+        return headerV;
+    }
+    return nil;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    MSSAutoresizeLabelFlowCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    [cell configCellWithTitle:self.data[indexPath.item]];
+    XDAutoresizeLabelFlowCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
+    [cell configCellWithTitle:self.data[indexPath.section][indexPath.item]];
     if (self.selectMark) {
-        if (indexPath.item == self.selectItem) {
+        if (indexPath.item == self.selectIndex.item && indexPath.section == self.selectIndex.section) {
             cell.beSelected = YES;
         }else {
            cell.beSelected = NO;
@@ -91,41 +127,20 @@ static NSString *const cellId = @"cellId";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.handler) {
-        NSUInteger index = indexPath.item;
-        NSString *title = self.data[index];
-        self.handler(index,title);
+        NSString *title = self.data[indexPath.section][indexPath.item];
+        self.handler(indexPath, title);
     }
     if (self.selectMark) {
-        self.selectItem = indexPath.item;
+        self.selectIndex = indexPath;
     }
 }
 
+#pragma mark - MSSAutoresizeLabelFlowLayout 代理方法
 - (NSString *)titleForLabelAtIndexPath:(NSIndexPath *)indexPath {
-    return self.data[indexPath.item];
+    return self.data[indexPath.section][indexPath.item];
 }
 
-- (void)layoutFinishWithNumberOfline:(NSInteger)number {
 
-    DEBUGLog(@"旧新 number == %ld,%ld",self.numberCount, number);
-    if (self.numberCount == number) {
-        return;
-    }
-    self.numberCount = number;
-    MSSAutoresizeLabelFlowConfig *config = [MSSAutoresizeLabelFlowConfig shareConfig];
-    CGFloat h = config.contentInsets.top+config.contentInsets.bottom+config.itemHeight*number+config.lineSpace*(number-1);
-    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, h);
-    DEBUGLog(@"final h == %f",h);
-    [UIView animateWithDuration:0.1 animations:^{
-        self.collection.frame = self.bounds;
-    }];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        // block回调 把新的高度传回去
-        if (self.contentSizeChangedHandler) {
-            self.contentSizeChangedHandler(self, h);
-        }
-    });
-}
 
 - (void)insertLabelWithTitle:(NSString *)title atIndex:(NSUInteger)index animated:(BOOL)animated {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
@@ -147,11 +162,6 @@ static NSString *const cellId = @"cellId";
     NSArray *indexPaths = [self indexPathsWithIndexes:indexes];
     [self.data removeObjectsAtIndexes:indexes];
     [self performBatchUpdatesWithAction:UICollectionUpdateActionDelete indexPaths:indexPaths animated:animated];
-}
-
-- (void)reloadAllWithTitles:(NSArray *)titles {
-    self.data = [titles mutableCopy];
-    [self.collection reloadData];
 }
 
 - (void)performBatchUpdatesWithAction:(UICollectionUpdateAction)action indexPaths:(NSArray *)indexPaths animated:(BOOL)animated {
