@@ -25,6 +25,7 @@
 #import "UITextField+HPExtension.h"
 #import "UIViewController+HPExtension.h"
 #import "NSArray+HPSafe.h"
+#import "HPProgressHUD.h"
 
 #import <Masonry.h>
 #import <MJRefresh/MJRefresh.h>

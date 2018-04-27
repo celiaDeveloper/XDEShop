@@ -11,6 +11,19 @@
 		3F2CE13B2074CDF30091B960 /* delete_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CE1392074CDF30091B960 /* delete_icon@2x.png */; };
 		3F2CE13D2074CE6C0091B960 /* search_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F2CE13C2074CE6C0091B960 /* search_icon@2x.png */; };
 		3F2CE1412079A4E30091B960 /* XDDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2CE1402079A4E30091B960 /* XDDataBase.m */; };
+		3F4AFF5C20889F75009BFA53 /* XDAttributeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF5220889F75009BFA53 /* XDAttributeSelectionViewController.m */; };
+		3F4AFF5D20889F75009BFA53 /* XDAttributeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF5420889F75009BFA53 /* XDAttributeHeaderView.m */; };
+		3F4AFF5E20889F76009BFA53 /* XDAttributeItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF5720889F75009BFA53 /* XDAttributeItemCell.m */; };
+		3F4AFF5F20889F76009BFA53 /* XDAttributeChoseTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF5920889F75009BFA53 /* XDAttributeChoseTopCell.m */; };
+		3F4AFF6020889F76009BFA53 /* XDCollectionHeaderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF5A20889F75009BFA53 /* XDCollectionHeaderLayout.m */; };
+		3F4AFF6820889FB0009BFA53 /* XDAttributeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF6220889FAF009BFA53 /* XDAttributeItem.m */; };
+		3F4AFF6920889FB0009BFA53 /* XDAttributeTitleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF6420889FAF009BFA53 /* XDAttributeTitleItem.m */; };
+		3F4AFF6A20889FB0009BFA53 /* XDAttributeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF6720889FAF009BFA53 /* XDAttributeList.m */; };
+		3F4AFF6E20897991009BFA53 /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF6D20897991009BFA53 /* PPNumberButton.m */; };
+		3F4AFF702089B923009BFA53 /* ShopItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F4AFF6F2089B922009BFA53 /* ShopItem.plist */; };
+		3F4AFF732089B9C6009BFA53 /* XDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF722089B9C6009BFA53 /* XDDetailViewController.m */; };
+		3F4AFF77208DC366009BFA53 /* XDAttributeSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AFF76208DC366009BFA53 /* XDAttributeSelectionView.m */; };
+		3F4AFF7A2090515E009BFA53 /* icon_cha@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F4AFF792090515E009BFA53 /* icon_cha@2x.png */; };
 		3F76A8EC2073646F00D68A25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A8EB2073646F00D68A25 /* AppDelegate.m */; };
 		3F76A8F42073646F00D68A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F76A8F32073646F00D68A25 /* Assets.xcassets */; };
 		3F76A8F72073646F00D68A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F76A8F52073646F00D68A25 /* LaunchScreen.storyboard */; };
@@ -148,6 +161,30 @@
 		3F2CE13C2074CE6C0091B960 /* search_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_icon@2x.png"; sourceTree = "<group>"; };
 		3F2CE13F2079A4E30091B960 /* XDDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDDataBase.h; sourceTree = "<group>"; };
 		3F2CE1402079A4E30091B960 /* XDDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDDataBase.m; sourceTree = "<group>"; };
+		3F4AFF5120889F75009BFA53 /* XDAttributeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAttributeSelectionViewController.h; sourceTree = "<group>"; };
+		3F4AFF5220889F75009BFA53 /* XDAttributeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAttributeSelectionViewController.m; sourceTree = "<group>"; };
+		3F4AFF5420889F75009BFA53 /* XDAttributeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAttributeHeaderView.m; sourceTree = "<group>"; };
+		3F4AFF5520889F75009BFA53 /* XDCollectionHeaderLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDCollectionHeaderLayout.h; sourceTree = "<group>"; };
+		3F4AFF5620889F75009BFA53 /* XDAttributeChoseTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAttributeChoseTopCell.h; sourceTree = "<group>"; };
+		3F4AFF5720889F75009BFA53 /* XDAttributeItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAttributeItemCell.m; sourceTree = "<group>"; };
+		3F4AFF5820889F75009BFA53 /* XDAttributeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAttributeHeaderView.h; sourceTree = "<group>"; };
+		3F4AFF5920889F75009BFA53 /* XDAttributeChoseTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAttributeChoseTopCell.m; sourceTree = "<group>"; };
+		3F4AFF5A20889F75009BFA53 /* XDCollectionHeaderLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDCollectionHeaderLayout.m; sourceTree = "<group>"; };
+		3F4AFF5B20889F75009BFA53 /* XDAttributeItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAttributeItemCell.h; sourceTree = "<group>"; };
+		3F4AFF6220889FAF009BFA53 /* XDAttributeItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAttributeItem.m; sourceTree = "<group>"; };
+		3F4AFF6320889FAF009BFA53 /* XDAttributeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAttributeList.h; sourceTree = "<group>"; };
+		3F4AFF6420889FAF009BFA53 /* XDAttributeTitleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAttributeTitleItem.m; sourceTree = "<group>"; };
+		3F4AFF6520889FAF009BFA53 /* XDAttributeItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAttributeItem.h; sourceTree = "<group>"; };
+		3F4AFF6620889FAF009BFA53 /* XDAttributeTitleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDAttributeTitleItem.h; sourceTree = "<group>"; };
+		3F4AFF6720889FAF009BFA53 /* XDAttributeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDAttributeList.m; sourceTree = "<group>"; };
+		3F4AFF6C20897991009BFA53 /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
+		3F4AFF6D20897991009BFA53 /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
+		3F4AFF6F2089B922009BFA53 /* ShopItem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ShopItem.plist; sourceTree = "<group>"; };
+		3F4AFF712089B9C6009BFA53 /* XDDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDDetailViewController.h; sourceTree = "<group>"; };
+		3F4AFF722089B9C6009BFA53 /* XDDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDDetailViewController.m; sourceTree = "<group>"; };
+		3F4AFF75208DC366009BFA53 /* XDAttributeSelectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDAttributeSelectionView.h; sourceTree = "<group>"; };
+		3F4AFF76208DC366009BFA53 /* XDAttributeSelectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDAttributeSelectionView.m; sourceTree = "<group>"; };
+		3F4AFF792090515E009BFA53 /* icon_cha@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_cha@2x.png"; sourceTree = "<group>"; };
 		3F76A8E72073646F00D68A25 /* XDEShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDEShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F76A8EA2073646F00D68A25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F76A8EB2073646F00D68A25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -425,6 +462,75 @@
 				3F2CE1402079A4E30091B960 /* XDDataBase.m */,
 			);
 			path = DB;
+			sourceTree = "<group>";
+		};
+		3F4AFF4F20889F75009BFA53 /* AttributeSelection(商品属性选择) */ = {
+			isa = PBXGroup;
+			children = (
+				3F4AFF6F2089B922009BFA53 /* ShopItem.plist */,
+				3F4AFF782090515E009BFA53 /* icon */,
+				3F4AFF6120889FAF009BFA53 /* M */,
+				3F4AFF5020889F75009BFA53 /* C */,
+				3F4AFF5320889F75009BFA53 /* V */,
+			);
+			path = "AttributeSelection(商品属性选择)";
+			sourceTree = "<group>";
+		};
+		3F4AFF5020889F75009BFA53 /* C */ = {
+			isa = PBXGroup;
+			children = (
+				3F4AFF5120889F75009BFA53 /* XDAttributeSelectionViewController.h */,
+				3F4AFF5220889F75009BFA53 /* XDAttributeSelectionViewController.m */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		3F4AFF5320889F75009BFA53 /* V */ = {
+			isa = PBXGroup;
+			children = (
+				3F4AFF6B20897991009BFA53 /* PPNumberButton */,
+				3F4AFF5B20889F75009BFA53 /* XDAttributeItemCell.h */,
+				3F4AFF5720889F75009BFA53 /* XDAttributeItemCell.m */,
+				3F4AFF5820889F75009BFA53 /* XDAttributeHeaderView.h */,
+				3F4AFF5420889F75009BFA53 /* XDAttributeHeaderView.m */,
+				3F4AFF5620889F75009BFA53 /* XDAttributeChoseTopCell.h */,
+				3F4AFF5920889F75009BFA53 /* XDAttributeChoseTopCell.m */,
+				3F4AFF5520889F75009BFA53 /* XDCollectionHeaderLayout.h */,
+				3F4AFF5A20889F75009BFA53 /* XDCollectionHeaderLayout.m */,
+				3F4AFF75208DC366009BFA53 /* XDAttributeSelectionView.h */,
+				3F4AFF76208DC366009BFA53 /* XDAttributeSelectionView.m */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		3F4AFF6120889FAF009BFA53 /* M */ = {
+			isa = PBXGroup;
+			children = (
+				3F4AFF6320889FAF009BFA53 /* XDAttributeList.h */,
+				3F4AFF6720889FAF009BFA53 /* XDAttributeList.m */,
+				3F4AFF6520889FAF009BFA53 /* XDAttributeItem.h */,
+				3F4AFF6220889FAF009BFA53 /* XDAttributeItem.m */,
+				3F4AFF6620889FAF009BFA53 /* XDAttributeTitleItem.h */,
+				3F4AFF6420889FAF009BFA53 /* XDAttributeTitleItem.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		3F4AFF6B20897991009BFA53 /* PPNumberButton */ = {
+			isa = PBXGroup;
+			children = (
+				3F4AFF6C20897991009BFA53 /* PPNumberButton.h */,
+				3F4AFF6D20897991009BFA53 /* PPNumberButton.m */,
+			);
+			path = PPNumberButton;
+			sourceTree = "<group>";
+		};
+		3F4AFF782090515E009BFA53 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				3F4AFF792090515E009BFA53 /* icon_cha@2x.png */,
+			);
+			path = icon;
 			sourceTree = "<group>";
 		};
 		3F76A8DE2073646F00D68A25 = {
@@ -1104,6 +1210,7 @@
 		3F76AA6E2073811C00D68A25 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3F4AFF4F20889F75009BFA53 /* AttributeSelection(商品属性选择) */,
 				3F76AA7A2074697300D68A25 /* C */,
 				3F76AA792074697300D68A25 /* M */,
 				3F76AA782074697300D68A25 /* V */,
@@ -1157,6 +1264,8 @@
 			children = (
 				3F76AA87207469FE00D68A25 /* XDHomeViewController.h */,
 				3F76AA88207469FE00D68A25 /* XDHomeViewController.m */,
+				3F4AFF712089B9C6009BFA53 /* XDDetailViewController.h */,
+				3F4AFF722089B9C6009BFA53 /* XDDetailViewController.m */,
 			);
 			path = C;
 			sourceTree = "<group>";
@@ -1313,6 +1422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F2CE13A2074CDF30091B960 /* fire_icon@2x.png in Resources */,
+				3F4AFF702089B923009BFA53 /* ShopItem.plist in Resources */,
 				3F76AA292073811200D68A25 /* HPStarRateViewstargray@2x.png in Resources */,
 				3F76AA182073811200D68A25 /* HPProgressHUD.bundle in Resources */,
 				3F76A8F72073646F00D68A25 /* LaunchScreen.storyboard in Resources */,
@@ -1331,6 +1441,7 @@
 				3F76AA2D2073811200D68A25 /* HP_default@2x.png in Resources */,
 				3F76AA322073811200D68A25 /* choose_up@2x.png in Resources */,
 				3F76AA162073811200D68A25 /* SRVideoPlayer.bundle in Resources */,
+				3F4AFF7A2090515E009BFA53 /* icon_cha@2x.png in Resources */,
 				3F76AA2B2073811200D68A25 /* HP_high@2x.png in Resources */,
 				3F76AA0C2073811200D68A25 /* STQRCodeController.bundle in Resources */,
 				3F76AA1C2073811200D68A25 /* refreshing_01@2x.png in Resources */,
@@ -1411,6 +1522,7 @@
 				3F76AA472073811200D68A25 /* UIMenuItem+HPCategory.m in Sources */,
 				3F76AA022073811200D68A25 /* YZFlowLayout.m in Sources */,
 				3F76AA522073811200D68A25 /* UIView+HPCategory.m in Sources */,
+				3F4AFF5E20889F76009BFA53 /* XDAttributeItemCell.m in Sources */,
 				3F76AA642073811200D68A25 /* NSMutableArray+HPSafe.m in Sources */,
 				3F76AA0E2073811200D68A25 /* STQRCodeReaderView.m in Sources */,
 				3F76AA0B2073811200D68A25 /* STQRCodeConst.m in Sources */,
@@ -1425,8 +1537,10 @@
 				3F76AA362073811200D68A25 /* HPTableView.m in Sources */,
 				3F76AA3C2073811200D68A25 /* CustomTextField.m in Sources */,
 				3F76AA402073811200D68A25 /* XMNetWorkTools.m in Sources */,
+				3F4AFF5F20889F76009BFA53 /* XDAttributeChoseTopCell.m in Sources */,
 				3F76AA5D2073811200D68A25 /* NSMutableString+HPSafe.m in Sources */,
 				3F76AA372073811200D68A25 /* HPWKWebView.m in Sources */,
+				3F4AFF732089B9C6009BFA53 /* XDDetailViewController.m in Sources */,
 				3F76AA002073811200D68A25 /* HPConsts.m in Sources */,
 				3F76AA462073811200D68A25 /* UIImage+HPCategory.m in Sources */,
 				3F76AA272073811200D68A25 /* HPStarRateView.m in Sources */,
@@ -1435,6 +1549,7 @@
 				3F76AA212073811200D68A25 /* HPRefreshHeader.m in Sources */,
 				3F76AA0A2073811200D68A25 /* STQRCodeAlert.m in Sources */,
 				3F76AA132073811200D68A25 /* SRVideoDownloader.m in Sources */,
+				3F4AFF6A20889FB0009BFA53 /* XDAttributeList.m in Sources */,
 				3F76AA662073811200D68A25 /* NSObject+HPJSON.m in Sources */,
 				3F76AA5C2073811200D68A25 /* NSString+HPCategory.m in Sources */,
 				3F76AA8C20746A2800D68A25 /* XDSearchViewController.m in Sources */,
@@ -1443,6 +1558,7 @@
 				3F76AA672073811200D68A25 /* NSObject+HPPerformBlock.m in Sources */,
 				3F76AA042073811200D68A25 /* YZDisplayViewController.m in Sources */,
 				3F76AA692073811200D68A25 /* UITextField+HPExtension.m in Sources */,
+				3F4AFF5C20889F75009BFA53 /* XDAttributeSelectionViewController.m in Sources */,
 				3F76AA442073811200D68A25 /* HPRequestCenter.m in Sources */,
 				3F76AA652073811200D68A25 /* UICollectionViewFlowLayout+HPExtension.m in Sources */,
 				3F76AA4C2073811200D68A25 /* UIButton+HPExtension.m in Sources */,
@@ -1451,6 +1567,7 @@
 				3F76AA172073811200D68A25 /* LEEAlert.m in Sources */,
 				3F76AA082073811200D68A25 /* SDBrowserImageView.m in Sources */,
 				3F76AA632073811200D68A25 /* NSArray+HPSafe.m in Sources */,
+				3F4AFF6920889FB0009BFA53 /* XDAttributeTitleItem.m in Sources */,
 				3F76AAAB2074AE3800D68A25 /* XDSearchStoreListViewController.m in Sources */,
 				3F76A8FA2073646F00D68A25 /* main.m in Sources */,
 				3F76AA062073811200D68A25 /* SDPhotoBrowser.m in Sources */,
@@ -1461,8 +1578,10 @@
 				3F76AA332073811200D68A25 /* HPImageCodeView.m in Sources */,
 				3F76AA4A2073811200D68A25 /* UILabel+HPExtension.m in Sources */,
 				3F76AA4B2073811200D68A25 /* UIButton+HPImageTitleSpacing.m in Sources */,
+				3F4AFF77208DC366009BFA53 /* XDAttributeSelectionView.m in Sources */,
 				3F76AAA82074AE1F00D68A25 /* XDSearchBarView.m in Sources */,
 				3F76AAA32074AE1F00D68A25 /* XDAutoresizeLabelFlowCell.m in Sources */,
+				3F4AFF6E20897991009BFA53 /* PPNumberButton.m in Sources */,
 				3F76AA572073811200D68A25 /* UICollectionViewController+HPCurrentPage.m in Sources */,
 				3F76AA77207464AB00D68A25 /* XDNavigationController.m in Sources */,
 				3F76AA3D2073811200D68A25 /* HPUserDefault.m in Sources */,
@@ -1474,6 +1593,7 @@
 				3F76AA582073811200D68A25 /* UICollectionView+HPExtension.m in Sources */,
 				3F76AAA12074AE1F00D68A25 /* XDAutoresizeLabelFlow.m in Sources */,
 				3F76AAA52074AE1F00D68A25 /* XDSearchStoreTableView.m in Sources */,
+				3F4AFF6020889F76009BFA53 /* XDCollectionHeaderLayout.m in Sources */,
 				3F76AA342073811200D68A25 /* HPButtonLayoutTextView.m in Sources */,
 				3F76AA152073811200D68A25 /* SRVideoProgressTip.m in Sources */,
 				3F76AA682073811200D68A25 /* NSObject+HPRuntime.m in Sources */,
@@ -1488,6 +1608,7 @@
 				3F76AA83207469D600D68A25 /* XDBaseViewController.m in Sources */,
 				3F76AA4F2073811200D68A25 /* UIView+Badge.m in Sources */,
 				3F76AA592073811200D68A25 /* UIBarButtonItem+HPBarButtonItem.m in Sources */,
+				3F4AFF6820889FB0009BFA53 /* XDAttributeItem.m in Sources */,
 				3F76AA012073811200D68A25 /* YZDisplayTitleLabel.m in Sources */,
 				3F76AA542073811200D68A25 /* UITabBar+HPBage.m in Sources */,
 				3F76AA112073811200D68A25 /* SRBrightnessView.m in Sources */,
@@ -1508,6 +1629,7 @@
 				3F76AA5E2073811200D68A25 /* NSString+HPPredicate.m in Sources */,
 				3F76AA512073811200D68A25 /* UIView+HPFrame.m in Sources */,
 				3F76AA122073811200D68A25 /* SRVideoBottomBar.m in Sources */,
+				3F4AFF5D20889F75009BFA53 /* XDAttributeHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
